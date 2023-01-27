@@ -19,9 +19,6 @@ new_t = []
 m_star = 1.11
 G = 6.67 * 10**-11
 
-a = []
-b = []
-
 K = semi_amplitude
 P = period
 e = 0.
