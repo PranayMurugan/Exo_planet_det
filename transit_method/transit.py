@@ -9,22 +9,14 @@ pixelFile = search_targetpixelfile('KIC 6922244', author="Kepler", cadence="long
 # Show a single snapshot
 pixelFile.plot(frame=42)
 
-# We'll combine the individual frames into a lightcurve
+# Combine the individual frames into a lightcurve
 # Aperture masks make the image look better for analysis
 lc = pixelFile.to_lightcurve(aperture_mask=pixelFile.pipeline_mask)
 lc.plot()
 
-# We may find it easier to spot the pattern if we flatten the curve
+# Flatten the curve
 flat_lc = lc.flatten()
 flat_lc.plot()
-
-# How to discover the correct period?
-# Use a periodogram to show all the repetitive patterns in your graph
-# Gives you the most likely candidate
-
-# Periodograms are an estimate of the spectral density of a signal
-# (An estimation of what the Fourier Transform of the data would look like
-#  if it were a continuous function https://arxiv.org/pdf/1703.09824.pdf)
 
 period = np.linspace(1, 5, 10000)
 # BLS = Box Least Squares
@@ -45,3 +37,4 @@ ax.set_xlim(-2,2)
 print(planet_x_period)
 print(planet_x_t0)
 print(planet_x_dur)
+
