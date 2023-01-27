@@ -124,42 +124,4 @@ plt.title('Scatter plot')
 plt.show()
 
 
-#mp_sin_i = (tp/(2 * np.pi * G))**(1/3) * K_star * np.sqrt(1 - e**2) * m_star**(2/3)
-#print(mp_sin_i)
 
-"""
-def rv_func(x, A, B, C):
-    y = (float(2) * np.pi * A * np.sin(B) * (np.cos(C + 0) + float(0) * np.cos(0)))/(x)
-    return y
-
-params, params_covariance = optimize.curve_fit(rv_func, new_t2, r, p0=None)
-
-print(params)
-
-plt.scatter(new_t2, r, label = 'Data')
-#plt.plot(new_t, rv_func(new_t, params[0], params[1], params[2], params[3]), label = 'Fitted function')
-plt.xlabel('Time period (in Julian days)')
-plt.ylabel('Radial velocity')
-plt.title('R_V curve for %s days' % tp2)
-plt.show()
-"""
-
-"""
-best_frequency = frequency[np.argmax(power)]
-t_fit = np.linspace(0, 1)
-ls = LombScargle(t_fit, r, dr)
-y_fit = ls.model(t_fit, best_frequency)
-theta = ls.model_parameters(best_frequency)
-print(theta)
-"""
-
-
-"""
-def rv_func(x, A, B, C, D):
-    y = (float(2) * np.pi * A * np.sin(B)) * C /(4.23 * (1- D**2 )**0.5)
-    return y
-
-params, params_covariance = optimize.curve_fit(rv_func, new_t2, r, p0=None)
-
-print(params)
-"""
